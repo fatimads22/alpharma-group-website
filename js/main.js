@@ -210,18 +210,30 @@ function buildBulkWhatsAppMessage() {
   const phone   = val('orderPhone');
   const email   = val('orderEmail');
   const country = val('orderCountry');
-  const payPref = checkedRadio('paymentPref') || 'To be discussed';
+  const selectedPayPref = checkedRadio('paymentPref');
   const notes   = val('orderNotes');
-
-  let msg = `*📦 BULK ORDER REQUEST — ALPHARMA GROUP*\n\n`;
-  msg += `*Company:* ${company}\n`;
-  msg += `*Contact:* ${contact}\n`;
-  msg += `*Phone:* ${phone}\n`;
-  if (email)   msg += `*Email:* ${email}\n`;
-  if (country) msg += `*Location:* ${country}\n`;
-  msg += `\n*─── ORDER DETAILS ───*\n\n`;
-
   const isLangEn = document.getElementById('htmlRoot').classList.contains('lang-en');
+  const text = isLangEn
+    ? { title: 'BULK ORDER REQUEST — ALPHARMA GROUP', company: 'Company', contact: 'Contact', phone: 'Phone', email: 'Email', location: 'Location', details: 'ORDER DETAILS', total: 'Total Units', payment: 'Payment Preference', additional: 'Additional Notes', specs: 'Specs', sent: 'Sent via alpharmagroup.com' }
+    : { title: 'DEMANDE DE COMMANDE EN GROS — ALPHARMA GROUP', company: 'Entreprise', contact: 'Contact', phone: 'Téléphone', email: 'Email', location: 'Lieu', details: 'DÉTAILS DE LA COMMANDE', total: 'Total des unités', payment: 'Mode de paiement', additional: 'Remarques supplémentaires', specs: 'Spécifications', sent: 'Envoyé depuis alpharmagroup.com' };
+  const paymentLabels = {
+    'Orange Money Guinea': 'Orange Money Guinée',
+    'MTN Mobile Money': 'MTN Mobile Money',
+    'Bank Transfer': 'Virement bancaire',
+    'Western Union / MoneyGram': 'Western Union / MoneyGram',
+    'In-Person (Cash at office)': 'En personne (espèces au bureau)',
+    'To be discussed': 'À définir'
+  };
+  const payPref = selectedPayPref ? (isLangEn ? selectedPayPref : paymentLabels[selectedPayPref] || selectedPayPref) : (isLangEn ? 'To be discussed' : 'À définir');
+
+  let msg = `*📦 ${text.title}*\n\n`;
+  msg += `*${text.company}:* ${company}\n`;
+  msg += `*${text.contact}:* ${contact}\n`;
+  msg += `*${text.phone}:* ${phone}\n`;
+  if (email)   msg += `*${text.email}:* ${email}\n`;
+  if (country) msg += `*${text.location}:* ${country}\n`;
+  msg += `\n*─── ${text.details} ───*\n\n`;
+
   let grandTotal = 0;
   document.querySelectorAll('.product-order-block').forEach(block => {
     const header = block.querySelector('.pob-header');
@@ -233,21 +245,24 @@ function buildBulkWhatsAppMessage() {
     inputs.forEach(inp => {
       const qty = parseInt(inp.value) || 0;
       if (qty > 0) {
-        lines.push(`  • ${inp.dataset.size}: ${qty}`);
+        const label = inp.closest('.size-qty').querySelector('label');
+        const localizedLabel = label.querySelector(isLangEn ? '.en-text' : '.fr-text');
+        const itemName = localizedLabel ? localizedLabel.textContent.trim() : inp.dataset.size;
+        lines.push(`  • ${itemName}: ${qty}`);
         grandTotal += qty;
       }
     });
     if (lines.length) {
       msg += `*${name}:*\n${lines.join('\n')}\n\n`;
       const notesEl = block.querySelector('.pob-spec');
-      if (notesEl && notesEl.value.trim()) msg += `  _Specs: ${notesEl.value.trim()}_\n\n`;
+      if (notesEl && notesEl.value.trim()) msg += `  _${text.specs}: ${notesEl.value.trim()}_\n\n`;
     }
   });
 
-  msg += `*Total Units:* ${grandTotal.toLocaleString()}\n`;
-  msg += `*Payment Preference:* ${payPref}\n`;
-  if (notes) msg += `*Additional Notes:* ${notes}\n`;
-  msg += `\n_Sent via alpharmagroup.com_`;
+  msg += `*${text.total}:* ${grandTotal.toLocaleString()}\n`;
+  msg += `*${text.payment}:* ${payPref}\n`;
+  if (notes) msg += `*${text.additional}:* ${notes}\n`;
+  msg += `\n_${text.sent}_`;
   return msg;
 }
 
@@ -266,9 +281,9 @@ function emailBulkOrder() {
   var phone   = val('orderPhone');
   var email   = val('orderEmail');
   var country = val('orderCountry');
-  var payPref = checkedRadio('paymentPref') || 'To be discussed';
   var notes   = val('orderNotes');
   var isEn    = document.getElementById('htmlRoot').classList.contains('lang-en');
+  var payPref = localizedPaymentValue(checkedRadio('paymentPref')) || (isEn ? 'To be discussed' : 'À définir');
   var div     = '------------------------------------------------------------';
 
   var subject = isEn
@@ -303,12 +318,18 @@ function emailBulkOrder() {
     var lines   = [];
     inputs.forEach(function (inp) {
       var qty = parseInt(inp.value) || 0;
-      if (qty > 0) { lines.push('    - ' + inp.dataset.size + ': ' + qty + ' unit(s)'); grandTotal += qty; }
+      if (qty > 0) {
+        var label = inp.closest('.size-qty').querySelector('label');
+        var localizedLabel = label.querySelector(isEn ? '.en-text' : '.fr-text');
+        var itemName = localizedLabel ? localizedLabel.textContent.trim() : inp.dataset.size;
+        lines.push('    - ' + itemName + ': ' + qty + ' unit(s)');
+        grandTotal += qty;
+      }
     });
     if (lines.length) {
       body += name + ':\n' + lines.join('\n') + '\n';
       var specEl = block.querySelector('.pob-spec');
-      if (specEl && specEl.value.trim()) body += '    Specifications: ' + specEl.value.trim() + '\n';
+      if (specEl && specEl.value.trim()) body += '    ' + (isEn ? 'Specifications' : 'Spécifications') + ' : ' + specEl.value.trim() + '\n';
       body += '\n';
     }
   });
@@ -350,25 +371,29 @@ function submitIndividualOrder(e) {
   e.preventDefault();
   const name    = val('indName');
   const phone   = val('indPhone');
-  const product = val('indProduct');
+  const product = localizedSelectValue('indProduct');
   const size    = val('indSize');
   const qty     = val('indQty');
-  const payPref = val('indPayment');
+  const payPref = localizedSelectValue('indPayment');
   const notes   = val('indNotes');
+  const isLangEn = isEnglishLanguage();
 
   if (!name || !phone || !product) {
     alert('Please fill in Name, Phone and Product selection.');
     return;
   }
 
-  let msg = `*🛒 INDIVIDUAL ORDER — ALPHARMA GROUP*\n\n`;
-  msg += `*Name:* ${name}\n*Phone:* ${phone}\n`;
-  msg += `*Product:* ${product}\n`;
-  if (size) msg += `*Size:* ${size}\n`;
-  if (qty)  msg += `*Quantity:* ${qty}\n`;
-  if (payPref) msg += `*Payment:* ${payPref}\n`;
-  if (notes)   msg += `*Notes:* ${notes}\n`;
-  msg += `\n_Sent via alpharmagroup.com_`;
+  const text = isLangEn
+    ? { title: 'INDIVIDUAL ORDER — ALPHARMA GROUP', name: 'Name', phone: 'Phone', product: 'Product', size: 'Size', quantity: 'Quantity', payment: 'Payment', notes: 'Notes', sent: 'Sent via alpharmagroup.com' }
+    : { title: 'COMMANDE INDIVIDUELLE — ALPHARMA GROUP', name: 'Nom', phone: 'Téléphone', product: 'Produit', size: 'Taille', quantity: 'Quantité', payment: 'Paiement', notes: 'Remarques', sent: 'Envoyé depuis alpharmagroup.com' };
+  let msg = `*🛒 ${text.title}*\n\n`;
+  msg += `*${text.name}:* ${name}\n*${text.phone}:* ${phone}\n`;
+  msg += `*${text.product}:* ${product}\n`;
+  if (size) msg += `*${text.size}:* ${size}\n`;
+  if (qty)  msg += `*${text.quantity}:* ${qty}\n`;
+  if (payPref) msg += `*${text.payment}:* ${payPref}\n`;
+  if (notes)   msg += `*${text.notes}:* ${notes}\n`;
+  msg += `\n_${text.sent}_`;
 
   openWhatsApp(msg);
   showSuccess('indSuccess');
@@ -384,22 +409,51 @@ function submitInquiry(e) {
   const phone   = val('inqPhone');
   const email   = val('inqEmail');
   const message = val('inqMessage');
+  const isLangEn = isEnglishLanguage();
 
   if (!name || !phone || !message) {
     alert('Please fill in Name, Phone and your message.');
     return;
   }
 
-  let msg = `*💬 INQUIRY — ALPHARMA GROUP*\n\n`;
-  msg += `*Name:* ${name}\n`;
-  if (company) msg += `*Company:* ${company}\n`;
-  msg += `*Phone:* ${phone}\n`;
-  if (email)   msg += `*Email:* ${email}\n`;
-  msg += `\n*Message:*\n${message}\n`;
-  msg += `\n_Sent via alpharmagroup.com_`;
+  const text = isLangEn
+    ? { title: 'INQUIRY — ALPHARMA GROUP', name: 'Name', company: 'Company', phone: 'Phone', email: 'Email', message: 'Message', sent: 'Sent via alpharmagroup.com' }
+    : { title: 'DEMANDE D’INFORMATION — ALPHARMA GROUP', name: 'Nom', company: 'Entreprise', phone: 'Téléphone', email: 'Email', message: 'Message', sent: 'Envoyé depuis alpharmagroup.com' };
+  let msg = `*💬 ${text.title}*\n\n`;
+  msg += `*${text.name}:* ${name}\n`;
+  if (company) msg += `*${text.company}:* ${company}\n`;
+  msg += `*${text.phone}:* ${phone}\n`;
+  if (email)   msg += `*${text.email}:* ${email}\n`;
+  msg += `\n*${text.message}:*\n${message}\n`;
+  msg += `\n_${text.sent}_`;
 
   openWhatsApp(msg);
   showSuccess('inqSuccess');
+}
+
+function emailInquiry() {
+  const name = val('inqName');
+  const company = val('inqCompany');
+  const phone = val('inqPhone');
+  const email = val('inqEmail');
+  const message = val('inqMessage');
+  const isLangEn = isEnglishLanguage();
+
+  if (!name || !phone || !message) {
+    alert(isLangEn ? 'Please fill in Name, Phone and your message.' : 'Veuillez remplir le nom, le téléphone et votre message.');
+    return;
+  }
+
+  const subject = isLangEn ? 'PPE Inquiry from Website' : 'Demande d’information depuis le site web';
+  let body = isLangEn ? 'Hello Alpharma Group,\n\n' : 'Bonjour Alpharma Group,\n\n';
+  body += (isLangEn ? 'Name: ' : 'Nom : ') + name + '\n';
+  if (company) body += (isLangEn ? 'Company: ' : 'Entreprise : ') + company + '\n';
+  body += (isLangEn ? 'Phone: ' : 'Téléphone : ') + phone + '\n';
+  if (email) body += (isLangEn ? 'Email: ' : 'Email : ') + email + '\n';
+  body += '\n' + (isLangEn ? 'Message:' : 'Message :') + '\n' + message + '\n\n';
+  body += isLangEn ? 'Thank you.' : 'Cordialement.';
+
+  window.location.href = 'mailto:alpharmagroup1@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
 }
 
 /* =====================
@@ -409,18 +463,22 @@ function submitContactForm(e) {
   e.preventDefault();
   const name    = val('ctName');
   const phone   = val('ctPhone');
-  const subject = val('ctSubject');
+  const subject = localizedSelectValue('ctSubject');
   const message = val('ctMessage');
+  const isLangEn = isEnglishLanguage();
 
   if (!name || !phone || !message) {
     alert('Please fill in Name, Phone and Message.');
     return;
   }
 
-  let msg = `*📩 CONTACT FORM — ALPHARMA GROUP*\n\n`;
-  msg += `*Name:* ${name}\n*Phone:* ${phone}\n`;
-  if (subject) msg += `*Subject:* ${subject}\n`;
-  msg += `\n*Message:*\n${message}`;
+  const text = isLangEn
+    ? { title: 'CONTACT FORM — ALPHARMA GROUP', name: 'Name', phone: 'Phone', subject: 'Subject', message: 'Message' }
+    : { title: 'FORMULAIRE DE CONTACT — ALPHARMA GROUP', name: 'Nom', phone: 'Téléphone', subject: 'Sujet', message: 'Message' };
+  let msg = `*📩 ${text.title}*\n\n`;
+  msg += `*${text.name}:* ${name}\n*${text.phone}:* ${phone}\n`;
+  if (subject) msg += `*${text.subject}:* ${subject}\n`;
+  msg += `\n*${text.message}:*\n${message}`;
 
   openWhatsApp(msg);
   showSuccess('ctSuccess');
@@ -431,6 +489,28 @@ function submitContactForm(e) {
    ===================== */
 function val(id)          { const el = document.getElementById(id); return el ? el.value.trim() : ''; }
 function checkedRadio(name) { const el = document.querySelector(`input[name="${name}"]:checked`); return el ? el.value : null; }
+function isEnglishLanguage() {
+  const root = document.getElementById('htmlRoot');
+  return !!(root && root.classList.contains('lang-en'));
+}
+function localizedSelectValue(id) {
+  const select = document.getElementById(id);
+  if (!select || !select.value) return '';
+  const option = select.options[select.selectedIndex];
+  const key = isEnglishLanguage() ? 'en' : 'fr';
+  return option.dataset[key] || option.textContent.trim() || select.value;
+}
+function localizedPaymentValue(value) {
+  if (!value || isEnglishLanguage()) return value;
+  const labels = {
+    'Orange Money Guinea': 'Orange Money Guinée',
+    'Bank Transfer': 'Virement bancaire',
+    'In-Person (Cash at office)': 'En personne (espèces au bureau)',
+    'In-Person Cash (Conakry office)': 'Paiement en espèces (bureau de Conakry)',
+    'To be discussed': 'À définir'
+  };
+  return labels[value] || value;
+}
 function openWhatsApp(msg) { window.open(`https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank'); }
 
 function showSuccess(id) {
@@ -442,10 +522,17 @@ function showSuccess(id) {
    QUICK WHATSAPP INQUIRY FROM PRODUCT PAGE
    ===================== */
 function inquireProduct(productName) {
-  const fr = document.getElementById('htmlRoot') && document.getElementById('htmlRoot').classList.contains('lang-en');
-  const msg = fr
-    ? `Hello Alpharma Group,\n\nI am interested in: *${productName}*\n\nPlease send me pricing, available sizes and ordering details.\n\nThank you.`
-    : `Bonjour Alpharma Group,\n\nJe suis intéressé(e) par : *${productName}*\n\nMerci de m'envoyer les détails sur les prix, tailles disponibles et comment commander.\n\nCordialement.`;
+  const root = document.getElementById('htmlRoot');
+  const isLangEn = root && root.classList.contains('lang-en');
+  const productTitle = Array.from(document.querySelectorAll('.product-card h3')).find(function (title) {
+    const englishTitle = title.querySelector('.en-text');
+    return englishTitle && englishTitle.textContent.trim() === productName;
+  });
+  const localizedTitle = productTitle && productTitle.querySelector(isLangEn ? '.en-text' : '.fr-text');
+  const localizedProductName = localizedTitle ? localizedTitle.textContent.trim() : productName;
+  const msg = isLangEn
+    ? `Hello Alpharma Group,\n\nI am interested in: *${localizedProductName}*\n\nPlease send me pricing, available sizes and ordering details.\n\nThank you.`
+    : `Bonjour Alpharma Group,\n\nJe suis intéressé(e) par : *${localizedProductName}*\n\nMerci de m'envoyer les détails sur les prix, tailles disponibles et comment commander.\n\nCordialement.`;
   openWhatsApp(msg);
 }
 
