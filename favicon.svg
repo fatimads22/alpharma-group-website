@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" fill="none">
+  <polygon points="22,2 42,18 22,42 2,18" fill="#f4a620"/>
+  <polygon points="22,2 42,18 22,22" fill="#1a2744" opacity=".18"/>
+  <polygon points="22,2 2,18 22,22" fill="#fff" opacity=".12"/>
+  <polygon points="22,10 34,20 22,34 10,20" fill="#1a2744" opacity=".4"/>
+  <circle cx="22" cy="20" r="2.5" fill="#fff" opacity=".65"/>
+</svg>

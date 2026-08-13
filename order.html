@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="fr" id="htmlRoot">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Place an Order — Alpharma Group | Bulk & Individual PPE Orders</title>
+  <meta name="description" content="Order PPE from Alpharma Group. Bulk orders (500+ units) for mining, construction and industrial companies with per-size quantity selection. Individual orders also welcome. Easy payment via Orange Money, bank transfer or WhatsApp.">
+  <!-- TODO: replace alpharmagroup.com with your real domain before going live -->
+  <link rel="canonical" href="https://alpharmagroup.com/order.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alpharmagroup.com/order.html">
+  <meta property="og:title" content="Place an Order — Alpharma Group | Bulk &amp; Individual PPE Orders">
+  <meta property="og:description" content="Order certified PPE from Alpharma Group. Bulk orders for mining companies, individual purchases, easy WhatsApp ordering. Orange Money, bank transfer and more.">
+  <meta property="og:image" content="https://alpharmagroup.com/og-image.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Alpharma Group",
+    "url": "https://alpharmagroup.com",
+    "description": "Certified PPE distributor for mining companies in Guinea and West Africa. Safety boots, gloves, helmets, respirators, hi-vis workwear and more.",
+    "telephone": ["+224611408054", "+224610747600", "+33627291646"],
+    "email": "alpharmagroup1@gmail.com",
+    "foundingDate": "2015",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Marché Sangoyah",
+      "addressLocality": "Conakry",
+      "addressCountry": "GN"
+    },
+    "areaServed": ["Guinea", "West Africa"],
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    }]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Alert Bar -->
+  <div class="alert-bar">
+
+    <span>
+      <span class="fr-text">Commander via WhatsApp :</span>
+      <span class="en-text">Prefer to order via WhatsApp?</span>
+      <a href="https://wa.me/+33627291646?text=Bonjour%20Alpharma%20Group%2C%20je%20souhaite%20passer%20une%20commande." target="_blank">
+        <span class="fr-text">Envoyez-nous un message</span>
+        <span class="en-text">Send us a message</span>
+      </a>
+    </span>
+    <span>&nbsp;|&nbsp; Conakry, Guinea</span>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar page-nav" id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" fill="none" aria-hidden="true"><polygon points="22,2 42,18 22,42 2,18" fill="#f4a620"/><polygon points="22,2 42,18 22,22" fill="#1a2744" opacity=".18"/><polygon points="22,2 2,18 22,22" fill="#fff" opacity=".12"/><polygon points="22,10 34,20 22,34 10,20" fill="#1a2744" opacity=".4"/><circle cx="22" cy="20" r="2.5" fill="#fff" opacity=".65"/></svg></span>
+        <div class="logo-text">
+          <span class="logo-name">ALPHARMA</span>
+          <span class="logo-sub">GROUP</span>
+        </div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html"><span class="fr-text">Accueil</span><span class="en-text">Home</span></a>
+        <a href="products.html"><span class="fr-text">Produits</span><span class="en-text">Products</span></a>
+        <a href="order.html" class="active"><span class="fr-text">Commander</span><span class="en-text">Order</span></a>
+        <a href="contact.html"><span class="fr-text">Contact</span><span class="en-text">Contact</span></a>
+      </div>
+      <button class="lang-toggle" id="langToggle" title="Changer de langue / Switch language">
+        <span class="fr-text">🇬🇧 EN</span>
+        <span class="en-text">🇫🇷 FR</span>
+      </button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html"><span class="fr-text">Accueil</span><span class="en-text">Home</span></a><span class="sep">/</span><span><span class="fr-text">Commander</span><span class="en-text">Order</span></span>
+      </div>
+      <h1><span class="fr-text">Passer Votre Commande</span><span class="en-text">Place Your Order</span></h1>
+      <p><span class="fr-text">Commandes en gros, achats individuels ou demande d'information — tout en un</span><span class="en-text">Bulk orders, individual purchases, or an inquiry — all in one place</span></p>
+    </div>
+  </section>
+
+  <!-- Order Section -->
+  <section class="order-section">
+    <div class="container">
+      <div class="order-container">
+
+        <!-- Tabs -->
+        <div class="order-tabs">
+          <button class="order-tab-btn active" data-tab="bulk">
+            <i class="fas fa-industry"></i>
+            <span class="fr-text">Commande en Gros</span><span class="en-text">Bulk Order</span>
+            <span style="font-size:.75rem;opacity:.7;">(1 000+)</span>
+          </button>
+          <button class="order-tab-btn" data-tab="individual">
+            <i class="fas fa-user"></i>
+            <span class="fr-text">Achat Individuel</span><span class="en-text">Individual Order</span>
+          </button>
+          <button class="order-tab-btn" data-tab="inquiry">
+            <i class="fas fa-envelope"></i>
+            <span class="fr-text">Demande d'Information</span><span class="en-text">Send Inquiry</span>
+          </button>
+        </div>
+
+        <!-- =================== BULK ORDER =================== -->
+        <div class="order-pane active" id="bulk">
+
+          <div class="form-card">
+            <h2 class="form-title"><i class="fas fa-industry" style="color:var(--secondary);margin-right:8px;"></i><span class="fr-text">Formulaire de Commande en Gros</span><span class="en-text">Bulk Order Form</span></h2>
+            <p class="form-subtitle"><span class="fr-text">Pour les entreprises commandant 1 000 à 5 000+ unités. Indiquez les tailles et quantités exactes — nous confirmerons la disponibilité et fournirons un devis.</span><span class="en-text">For companies ordering 1,000 to 5,000+ units. Specify exact sizes and quantities for each product — we will confirm availability and provide a quote.</span></p>
+
+            <div id="bulkSuccess" class="success-alert">
+              <i class="fas fa-check-circle"></i>
+              <p><span class="fr-text">Votre commande a été envoyée via WhatsApp ! Notre équipe confirmera dans les prochaines heures. Sans réponse sous 24h, appelez-nous directement.</span><span class="en-text">Your order has been sent via WhatsApp! Our team will confirm your order within a few hours. If you haven't received a reply in 24 hours, please call us directly.</span></p>
+            </div>
+
+            <form onsubmit="submitBulkOrder(event)">
+
+              <!-- Company Info -->
+              <div class="form-section-title"><i class="fas fa-building"></i> <span class="fr-text">Informations de la Société</span><span class="en-text">Company Information</span></div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="company"><span class="fr-text">Nom de la Société</span><span class="en-text">Company Name</span> <span class="req">*</span></label>
+                  <input type="text" id="company" class="form-control" placeholder="ex. Kindia Gold Mining S.A." data-placeholder-fr="ex. Kindia Gold Mining S.A." data-placeholder-en="e.g. Kindia Gold Mining S.A." required>
+                </div>
+                <div class="form-group">
+                  <label for="contactName"><span class="fr-text">Personne de Contact</span><span class="en-text">Contact Person</span> <span class="req">*</span></label>
+                  <input type="text" id="contactName" class="form-control" placeholder="Nom complet" data-placeholder-fr="Nom complet" data-placeholder-en="Full name" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="orderPhone"><span class="fr-text">Téléphone / WhatsApp</span><span class="en-text">Phone / WhatsApp</span> <span class="req">*</span></label>
+                  <input type="tel" id="orderPhone" class="form-control" placeholder="+224 XXX XXX XXX" required>
+                </div>
+                <div class="form-group">
+                  <label for="orderEmail"><span class="fr-text">Adresse Email</span><span class="en-text">Email Address</span></label>
+                  <input type="email" id="orderEmail" class="form-control" placeholder="company@example.com">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="orderCountry"><span class="fr-text">Localisation / Région</span><span class="en-text">Location / Region</span></label>
+                  <input type="text" id="orderCountry" class="form-control" placeholder="ex. Boké, Guinée" data-placeholder-fr="ex. Boké, Guinée" data-placeholder-en="e.g. Boké, Guinea">
+                </div>
+                <div class="form-group">
+                  <label for="deliveryMethod"><span class="fr-text">Mode de Livraison</span><span class="en-text">Preferred Delivery</span></label>
+                  <select id="deliveryMethod" class="form-control">
+                    <option value="" data-fr="— Sélectionner —" data-en="— Select —">— Sélectionner —</option>
+                    <option value="Livraison à Conakry" data-fr="Livraison à Conakry" data-en="Delivery in Conakry">Livraison à Conakry</option>
+                    <option value="Livraison sur site" data-fr="Livraison sur site" data-en="Delivery to site">Livraison sur site</option>
+                    <option value="Livraison à l'intérieur du pays" data-fr="Livraison à l'intérieur du pays" data-en="Delivery upcountry">Livraison à l'intérieur du pays</option>
+                    <option value="To be arranged" data-fr="À définir" data-en="To be arranged">À définir</option>
+                  </select>
+                </div>
+              </div>
+
+              <hr class="form-divider">
+
+              <!-- Products -->
+              <div class="form-section-title"><i class="fas fa-boxes"></i> <span class="fr-text">Sélectionner les Produits et Tailles</span><span class="en-text">Select Products &amp; Sizes</span></div>
+              <p style="color:var(--gray);font-size:.85rem;margin-bottom:20px;"><span class="fr-text">Cliquez sur un produit pour le développer et saisir les quantités par taille. Laissez 0 pour les tailles non requises.</span><span class="en-text">Click a product to expand it and enter the quantity needed per size. Leave sizes at 0 if not required.</span></p>
+
+              <!-- Safety Boots -->
+              <div class="product-order-block" id="pob-footwear">
+                <div class="pob-header">
+                  <div class="pob-icon"><i class="fas fa-shoe-prints"></i></div>
+                  <span class="pob-title"><span class="fr-text">Chaussures de Sécurité</span><span class="en-text">Safety Boots / Footwear</span></span>
+                  <span class="pob-count"></span>
+                  <i class="fas fa-chevron-down pob-arrow"></i>
+                </div>
+                <div class="pob-body">
+                  <p style="font-size:.82rem;color:var(--gray);margin-bottom:14px;"><span class="fr-text">Indiquez le nombre de paires par pointure EU. Contactez-nous si votre pointure ne figure pas dans la liste.</span><span class="en-text">Enter the number of pairs needed for each EU size. Contact us if you need a size not listed.</span></p>
+                  <div class="sizes-grid">
+                    <div class="size-qty"><label>EU 36</label><input type="number" min="0" value="0" class="size-qty-input" data-size="EU 36"></div>
+                    <div class="size-qty"><label>EU 37</label><input type="number" min="0" value="0" class="size-qty-input" data-size="EU 37"></div>
+                    <div class="size-qty"><label>EU 38</label><input type="number" min="0" value="0" class="size-qty-input" data-size="EU 38"></div>
+                    <div class="size-qty"><label>EU 39</label><input type="number" min="0" value="0" class="size-qty-input" data-size="EU 39"></div>
+                    <div class="size-qty"><label>EU 40</label><input type="number" min="0" value="0" class="size-qty-input" data-size="EU 40"></div>
+                    <div class="size-qty"><label>EU 41</label><input type="number" min="0" value="0" class="size-qty-input" data-size="EU 41"></div>
+                    <div class="size-qty"><label>EU 42</label><input type="number" min="0" value="0" class="size-qty-input" data-size="EU 42"></div>
+                    <div class="size-qty"><label>EU 43</label><input type="number" min="0" value="0" class="size-qty-input" data-size="EU 43"></div>
+                    <div class="size-qty"><label>EU 44</label><input type="number" min="0" value="0" class="size-qty-input" data-size="EU 44"></div>
+                    <div class="size-qty"><label>EU 45</label><input type="number" min="0" value="0" class="size-qty-input" data-size="EU 45"></div>
+                    <div class="size-qty"><label>EU 46</label><input type="number" min="0" value="0" class="size-qty-input" data-size="EU 46"></div>
+                    <div class="size-qty"><label>EU 47</label><input type="number" min="0" value="0" class="size-qty-input" data-size="EU 47"></div>
+                    <div class="size-qty"><label>EU 48</label><input type="number" min="0" value="0" class="size-qty-input" data-size="EU 48"></div>
+                  </div>
+                  <div class="pob-subtotal">
+                    <span><span class="fr-text">Total Chaussures :</span><span class="en-text">Total Safety Boots:</span></span>
+                    <strong><span class="pob-subtotal-val">0</span> pairs</strong>
+                  </div>
+                  <textarea class="form-control pob-notes pob-spec" placeholder="Exigences : type de chaussure (embout acier / composite / chimique), etc." data-placeholder-fr="Exigences : type de chaussure (embout acier / composite / chimique), etc." data-placeholder-en="Special requirements: boot type (steel toe / composite / chemical resistant), etc." rows="2"></textarea>
+                </div>
+              </div>
+
+              <!-- Gloves -->
+              <div class="product-order-block" id="pob-gloves">
+                <div class="pob-header">
+                  <div class="pob-icon"><i class="fas fa-hand-paper"></i></div>
+                  <span class="pob-title"><span class="fr-text">Gants de Protection</span><span class="en-text">Protective Gloves</span></span>
+                  <span class="pob-count"></span>
+                  <i class="fas fa-chevron-down pob-arrow"></i>
+                </div>
+                <div class="pob-body">
+                  <div class="sizes-grid">
+                    <div class="size-qty"><label>XS (6)</label><input type="number" min="0" value="0" class="size-qty-input" data-size="XS (6)"></div>
+                    <div class="size-qty"><label>S (7)</label><input type="number" min="0" value="0" class="size-qty-input" data-size="S (7)"></div>
+                    <div class="size-qty"><label>M (8)</label><input type="number" min="0" value="0" class="size-qty-input" data-size="M (8)"></div>
+                    <div class="size-qty"><label>L (9)</label><input type="number" min="0" value="0" class="size-qty-input" data-size="L (9)"></div>
+                    <div class="size-qty"><label>XL (10)</label><input type="number" min="0" value="0" class="size-qty-input" data-size="XL (10)"></div>
+                    <div class="size-qty"><label>XXL (11)</label><input type="number" min="0" value="0" class="size-qty-input" data-size="XXL (11)"></div>
+                  </div>
+                  <div class="pob-subtotal">
+                    <span><span class="fr-text">Total Gants :</span><span class="en-text">Total Gloves:</span></span>
+                    <strong><span class="pob-subtotal-val">0</span> pairs</strong>
+                  </div>
+                  <textarea class="form-control pob-notes pob-spec" placeholder="Type de gant : Anticoupure / Chaleur / Chimique / Anti-impact / Usage général" data-placeholder-fr="Type de gant : Anticoupure / Chaleur / Chimique / Anti-impact / Usage général" data-placeholder-en="Glove type: Cut-resistant / Heat-resistant / Chemical / Impact / General purpose" rows="2"></textarea>
+                </div>
+              </div>
+
+              <!-- Safety Helmets -->
+              <div class="product-order-block" id="pob-helmets">
+                <div class="pob-header">
+                  <div class="pob-icon"><i class="fas fa-hard-hat"></i></div>
+                  <span class="pob-title"><span class="fr-text">Casques de Sécurité</span><span class="en-text">Safety Helmets / Hard Hats</span></span>
+                  <span class="pob-count"></span>
+                  <i class="fas fa-chevron-down pob-arrow"></i>
+                </div>
+                <div class="pob-body">
+                  <p style="font-size:.82rem;color:var(--gray);margin-bottom:14px;"><span class="fr-text">Casques à taille unique réglable (54–62 cm).</span><span class="en-text">Helmets are one-size adjustable (54–62 cm).</span></p>
+                  <div class="sizes-grid" style="grid-template-columns:repeat(2,1fr)">
+                    <div class="size-qty"><label><span class="fr-text">Quantité totale</span><span class="en-text">Total Quantity</span></label><input type="number" min="0" value="0" class="size-qty-input" data-size="Safety Helmets"></div>
+                  </div>
+                  <div class="pob-subtotal">
+                    <span><span class="fr-text">Total Casques :</span><span class="en-text">Total Helmets:</span></span>
+                    <strong><span class="pob-subtotal-val">0</span> units</strong>
+                  </div>
+                  <textarea class="form-control pob-notes pob-spec" placeholder="Type : Standard / Ventilé / Avec visière / Avec coquilles antibruit." data-placeholder-fr="Type : Standard / Ventilé / Avec visière / Avec coquilles antibruit." data-placeholder-en="Type: Standard / Vented / With visor / With ear defenders." rows="2"></textarea>
+                </div>
+              </div>
+
+              <!-- Goggles & Face Protection -->
+              <div class="product-order-block" id="pob-eye">
+                <div class="pob-header">
+                  <div class="pob-icon"><i class="fas fa-glasses"></i></div>
+                  <span class="pob-title"><span class="fr-text">Lunettes &amp; Protection Oculaire / Faciale</span><span class="en-text">Goggles &amp; Eye / Face Protection</span></span>
+                  <span class="pob-count"></span>
+                  <i class="fas fa-chevron-down pob-arrow"></i>
+                </div>
+                <div class="pob-body">
+                  <div class="sizes-grid">
+                    <div class="size-qty"><label><span class="fr-text">Lunettes de protection</span><span class="en-text">Safety Goggles</span></label><input type="number" min="0" value="0" class="size-qty-input" data-size="Safety Goggles"></div>
+                    <div class="size-qty"><label><span class="fr-text">Lunettes de sécurité</span><span class="en-text">Safety Glasses</span></label><input type="number" min="0" value="0" class="size-qty-input" data-size="Safety Glasses"></div>
+                    <div class="size-qty"><label><span class="fr-text">Écran facial</span><span class="en-text">Face Shield</span></label><input type="number" min="0" value="0" class="size-qty-input" data-size="Face Shield"></div>
+                    <div class="size-qty"><label><span class="fr-text">Visière de soudure</span><span class="en-text">Welding Visor</span></label><input type="number" min="0" value="0" class="size-qty-input" data-size="Welding Visor"></div>
+                  </div>
+                  <div class="pob-subtotal">
+                    <span><span class="fr-text">Total Oculaire/Visage :</span><span class="en-text">Total Eye/Face:</span></span>
+                    <strong><span class="pob-subtotal-val">0</span> units</strong>
+                  </div>
+                  <textarea class="form-control pob-notes pob-spec" placeholder="Exigences spécifiques (ex. antibuée, teinte UV, sur lunettes de vue)" data-placeholder-fr="Exigences spécifiques (ex. antibuée, teinte UV, sur lunettes de vue)" data-placeholder-en="Specific requirements (e.g. anti-fog, UV tinted, over-glasses fit)" rows="2"></textarea>
+                </div>
+              </div>
+
+              <!-- Respiratory -->
+              <div class="product-order-block" id="pob-respiratory">
+                <div class="pob-header">
+                  <div class="pob-icon"><i class="fas fa-head-side-mask"></i></div>
+                  <span class="pob-title"><span class="fr-text">Protection Respiratoire</span><span class="en-text">Respiratory Protection</span></span>
+                  <span class="pob-count"></span>
+                  <i class="fas fa-chevron-down pob-arrow"></i>
+                </div>
+                <div class="pob-body">
+                  <div class="sizes-grid">
+                    <div class="size-qty"><label>FFP2/N95 (S)</label><input type="number" min="0" value="0" class="size-qty-input" data-size="FFP2/N95 (S)"></div>
+                    <div class="size-qty"><label>FFP2/N95 (M)</label><input type="number" min="0" value="0" class="size-qty-input" data-size="FFP2/N95 (M)"></div>
+                    <div class="size-qty"><label>FFP2/N95 (L)</label><input type="number" min="0" value="0" class="size-qty-input" data-size="FFP2/N95 (L)"></div>
+                    <div class="size-qty"><label>FFP3 (M)</label><input type="number" min="0" value="0" class="size-qty-input" data-size="FFP3 (M)"></div>
+                    <div class="size-qty"><label><span class="fr-text">Demi-masque (S)</span><span class="en-text">Half-Face (S)</span></label><input type="number" min="0" value="0" class="size-qty-input" data-size="Half-Face Respirator (S)"></div>
+                    <div class="size-qty"><label><span class="fr-text">Demi-masque (M)</span><span class="en-text">Half-Face (M)</span></label><input type="number" min="0" value="0" class="size-qty-input" data-size="Half-Face Respirator (M)"></div>
+                    <div class="size-qty"><label><span class="fr-text">Demi-masque (L)</span><span class="en-text">Half-Face (L)</span></label><input type="number" min="0" value="0" class="size-qty-input" data-size="Half-Face Respirator (L)"></div>
+                    <div class="size-qty"><label><span class="fr-text">Masque complet (M)</span><span class="en-text">Full-Face (M)</span></label><input type="number" min="0" value="0" class="size-qty-input" data-size="Full-Face Respirator (M)"></div>
+                    <div class="size-qty"><label><span class="fr-text">Masque complet (L)</span><span class="en-text">Full-Face (L)</span></label><input type="number" min="0" value="0" class="size-qty-input" data-size="Full-Face Respirator (L)"></div>
+                  </div>
+                  <div class="pob-subtotal">
+                    <span><span class="fr-text">Total Respiratoire :</span><span class="en-text">Total Respiratory:</span></span>
+                    <strong><span class="pob-subtotal-val">0</span> units</strong>
+                  </div>
+                  <textarea class="form-control pob-notes pob-spec" placeholder="Précisez les risques (poussière, gaz, chimique) pour recommander les filtres adaptés" data-placeholder-fr="Précisez les risques (poussière, gaz, chimique) pour recommander les filtres adaptés" data-placeholder-en="Specify hazards (dust, gas, chemical) so we can recommend correct filter cartridges" rows="2"></textarea>
+                </div>
+              </div>
+
+              <!-- Hearing -->
+              <div class="product-order-block" id="pob-hearing">
+                <div class="pob-header">
+                  <div class="pob-icon"><i class="fas fa-deaf"></i></div>
+                  <span class="pob-title"><span class="fr-text">Protection Auditive</span><span class="en-text">Hearing Protection</span></span>
+                  <span class="pob-count"></span>
+                  <i class="fas fa-chevron-down pob-arrow"></i>
+                </div>
+                <div class="pob-body">
+                  <div class="sizes-grid">
+                    <div class="size-qty"><label><span class="fr-text">Bouchons mousse (paires)</span><span class="en-text">Foam Plugs (pairs)</span></label><input type="number" min="0" value="0" class="size-qty-input" data-size="Foam Ear Plugs (pairs)"></div>
+                    <div class="size-qty"><label><span class="fr-text">Bouchons réutilisables</span><span class="en-text">Reusable Plugs</span></label><input type="number" min="0" value="0" class="size-qty-input" data-size="Reusable Ear Plugs"></div>
+                    <div class="size-qty"><label><span class="fr-text">Casques antibruit</span><span class="en-text">Ear Muffs</span></label><input type="number" min="0" value="0" class="size-qty-input" data-size="Ear Muffs"></div>
+                    <div class="size-qty"><label><span class="fr-text">Bouchons à arceau</span><span class="en-text">Banded Plugs</span></label><input type="number" min="0" value="0" class="size-qty-input" data-size="Banded Ear Plugs"></div>
+                  </div>
+                  <div class="pob-subtotal">
+                    <span><span class="fr-text">Total Auditif :</span><span class="en-text">Total Hearing Protection:</span></span>
+                    <strong><span class="pob-subtotal-val">0</span> units</strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Hi-Vis Vests -->
+              <div class="product-order-block" id="pob-hivis">
+                <div class="pob-header">
+                  <div class="pob-icon"><i class="fas fa-vest"></i></div>
+                  <span class="pob-title"><span class="fr-text">Gilets &amp; Vestes Haute Visibilité</span><span class="en-text">Hi-Vis Vests &amp; Jackets</span></span>
+                  <span class="pob-count"></span>
+                  <i class="fas fa-chevron-down pob-arrow"></i>
+                </div>
+                <div class="pob-body">
+                  <div class="sizes-grid">
+                    <div class="size-qty"><label>S</label><input type="number" min="0" value="0" class="size-qty-input" data-size="S"></div>
+                    <div class="size-qty"><label>M</label><input type="number" min="0" value="0" class="size-qty-input" data-size="M"></div>
+                    <div class="size-qty"><label>L</label><input type="number" min="0" value="0" class="size-qty-input" data-size="L"></div>
+                    <div class="size-qty"><label>XL</label><input type="number" min="0" value="0" class="size-qty-input" data-size="XL"></div>
+                    <div class="size-qty"><label>XXL</label><input type="number" min="0" value="0" class="size-qty-input" data-size="XXL"></div>
+                    <div class="size-qty"><label>3XL</label><input type="number" min="0" value="0" class="size-qty-input" data-size="3XL"></div>
+
+                  </div>
+                  <div class="pob-subtotal">
+                    <span><span class="fr-text">Total Haute Visibilité :</span><span class="en-text">Total Hi-Vis:</span></span>
+                    <strong><span class="pob-subtotal-val">0</span> units</strong>
+                  </div>
+                  <textarea class="form-control pob-notes pob-spec" placeholder="Gilet / Veste / Classe 2 ou 3" data-placeholder-fr="Gilet / Veste / Classe 2 ou 3" data-placeholder-en="Vest only / Full jacket / Class 2 or Class 3" rows="2"></textarea>
+                </div>
+              </div>
+
+              <!-- Cargo Trousers -->
+              <div class="product-order-block" id="pob-cargo">
+                <div class="pob-header">
+                  <div class="pob-icon"><i class="fas fa-tshirt"></i></div>
+                  <span class="pob-title"><span class="fr-text">Pantalons Cargo</span><span class="en-text">Cargo Trousers</span></span>
+                  <span class="pob-count"></span>
+                  <i class="fas fa-chevron-down pob-arrow"></i>
+                </div>
+                <div class="pob-body">
+                  <p style="font-size:.82rem;color:var(--gray);margin-bottom:14px;"><span class="fr-text">Indiquez la taille de la ceinture dans les cases ci-dessous. Utilisez les notes pour préciser la longueur (30", 32", 34") par taille si nécessaire.</span><span class="en-text">Specify waist size in the boxes below. Use the notes to indicate length (30", 32", 34") per waist size if needed.</span></p>
+                  <div class="sizes-grid">
+                    <div class="size-qty"><label><span class="fr-text">Taille 28"</span><span class="en-text">Waist 28"</span></label><input type="number" min="0" value="0" class="size-qty-input" data-size="W28"></div>
+                    <div class="size-qty"><label><span class="fr-text">Taille 30"</span><span class="en-text">Waist 30"</span></label><input type="number" min="0" value="0" class="size-qty-input" data-size="W30"></div>
+                    <div class="size-qty"><label><span class="fr-text">Taille 32"</span><span class="en-text">Waist 32"</span></label><input type="number" min="0" value="0" class="size-qty-input" data-size="W32"></div>
+                    <div class="size-qty"><label><span class="fr-text">Taille 34"</span><span class="en-text">Waist 34"</span></label><input type="number" min="0" value="0" class="size-qty-input" data-size="W34"></div>
+                    <div class="size-qty"><label><span class="fr-text">Taille 36"</span><span class="en-text">Waist 36"</span></label><input type="number" min="0" value="0" class="size-qty-input" data-size="W36"></div>
+                    <div class="size-qty"><label><span class="fr-text">Taille 38"</span><span class="en-text">Waist 38"</span></label><input type="number" min="0" value="0" class="size-qty-input" data-size="W38"></div>
+                    <div class="size-qty"><label><span class="fr-text">Taille 40"</span><span class="en-text">Waist 40"</span></label><input type="number" min="0" value="0" class="size-qty-input" data-size="W40"></div>
+                    <div class="size-qty"><label><span class="fr-text">Taille 42"</span><span class="en-text">Waist 42"</span></label><input type="number" min="0" value="0" class="size-qty-input" data-size="W42"></div>
+                    <div class="size-qty"><label><span class="fr-text">Taille 44"</span><span class="en-text">Waist 44"</span></label><input type="number" min="0" value="0" class="size-qty-input" data-size="W44"></div>
+                    <div class="size-qty"><label><span class="fr-text">Taille 46"</span><span class="en-text">Waist 46"</span></label><input type="number" min="0" value="0" class="size-qty-input" data-size="W46"></div>
+                    <div class="size-qty"><label><span class="fr-text">Taille 48"</span><span class="en-text">Waist 48"</span></label><input type="number" min="0" value="0" class="size-qty-input" data-size="W48"></div>
+                  </div>
+                  <div class="pob-subtotal">
+                    <span><span class="fr-text">Total Pantalons Cargo :</span><span class="en-text">Total Cargo Trousers:</span></span>
+                    <strong><span class="pob-subtotal-val">0</span> units</strong>
+                  </div>
+                  <textarea class="form-control pob-notes pob-spec" placeholder="Longueur de jambe, option ignifuge ?" data-placeholder-fr="Longueur de jambe, option ignifuge ?" data-placeholder-en="Leg lengths, FR option needed?" rows="2"></textarea>
+                </div>
+              </div>
+
+              <!-- Coveralls -->
+              <div class="product-order-block" id="pob-coveralls">
+                <div class="pob-header">
+                  <div class="pob-icon"><i class="fas fa-user-tie"></i></div>
+                  <span class="pob-title"><span class="fr-text">Combinaisons / Bleus de Travail</span><span class="en-text">Coveralls / Boiler Suits</span></span>
+                  <span class="pob-count"></span>
+                  <i class="fas fa-chevron-down pob-arrow"></i>
+                </div>
+                <div class="pob-body">
+                  <div class="sizes-grid">
+                    <div class="size-qty"><label>XS</label><input type="number" min="0" value="0" class="size-qty-input" data-size="XS"></div>
+                    <div class="size-qty"><label>S</label><input type="number" min="0" value="0" class="size-qty-input" data-size="S"></div>
+                    <div class="size-qty"><label>M</label><input type="number" min="0" value="0" class="size-qty-input" data-size="M"></div>
+                    <div class="size-qty"><label>L</label><input type="number" min="0" value="0" class="size-qty-input" data-size="L"></div>
+                    <div class="size-qty"><label>XL</label><input type="number" min="0" value="0" class="size-qty-input" data-size="XL"></div>
+                    <div class="size-qty"><label>XXL</label><input type="number" min="0" value="0" class="size-qty-input" data-size="XXL"></div>
+                    <div class="size-qty"><label>3XL</label><input type="number" min="0" value="0" class="size-qty-input" data-size="3XL"></div>
+
+                  </div>
+                  <div class="pob-subtotal">
+                    <span><span class="fr-text">Total Combinaisons :</span><span class="en-text">Total Coveralls:</span></span>
+                    <strong><span class="pob-subtotal-val">0</span> units</strong>
+                  </div>
+                  <textarea class="form-control pob-notes pob-spec" placeholder="Type : Standard / Ignifuge / Chimique / Jetable." data-placeholder-fr="Type : Standard / Ignifuge / Chimique / Jetable." data-placeholder-en="Type: Standard / FR (Flame-Resistant) / Chemical / Disposable." rows="2"></textarea>
+                </div>
+              </div>
+
+              <!-- Work Uniform Set -->
+              <div class="product-order-block" id="pob-uniform">
+                <div class="pob-header">
+                  <div class="pob-icon"><i class="fas fa-tshirt"></i></div>
+                  <span class="pob-title"><span class="fr-text">Tenue de Travail Complète (Chemise + Pantalon)</span><span class="en-text">Complete Work Uniform (Shirt + Trousers)</span></span>
+                  <span class="pob-count"></span>
+                  <i class="fas fa-chevron-down pob-arrow"></i>
+                </div>
+                <div class="pob-body">
+                  <div class="sizes-grid">
+                    <div class="size-qty"><label>XS</label><input type="number" min="0" value="0" class="size-qty-input" data-size="XS"></div>
+                    <div class="size-qty"><label>S</label><input type="number" min="0" value="0" class="size-qty-input" data-size="S"></div>
+                    <div class="size-qty"><label>M</label><input type="number" min="0" value="0" class="size-qty-input" data-size="M"></div>
+                    <div class="size-qty"><label>L</label><input type="number" min="0" value="0" class="size-qty-input" data-size="L"></div>
+                    <div class="size-qty"><label>XL</label><input type="number" min="0" value="0" class="size-qty-input" data-size="XL"></div>
+                    <div class="size-qty"><label>XXL</label><input type="number" min="0" value="0" class="size-qty-input" data-size="XXL"></div>
+                    <div class="size-qty"><label>3XL</label><input type="number" min="0" value="0" class="size-qty-input" data-size="3XL"></div>
+                  </div>
+                  <div class="pob-subtotal">
+                    <span><span class="fr-text">Total Tenues :</span><span class="en-text">Total Sets:</span></span>
+                    <strong><span class="pob-subtotal-val">0</span> units</strong>
+                  </div>
+                  <textarea class="form-control pob-notes pob-spec" placeholder="Logo entreprise souhaité ?" data-placeholder-fr="Logo entreprise souhaité ?" data-placeholder-en="Company logo required?" rows="2"></textarea>
+                </div>
+              </div>
+
+              <!-- Work T-Shirt -->
+              <div class="product-order-block" id="pob-tshirt">
+                <div class="pob-header">
+                  <div class="pob-icon"><i class="fas fa-tshirt"></i></div>
+                  <span class="pob-title"><span class="fr-text">T-Shirt de Travail</span><span class="en-text">Work T-Shirt</span></span>
+                  <span class="pob-count"></span>
+                  <i class="fas fa-chevron-down pob-arrow"></i>
+                </div>
+                <div class="pob-body">
+                  <div class="sizes-grid">
+                    <div class="size-qty"><label>XS</label><input type="number" min="0" value="0" class="size-qty-input" data-size="XS"></div>
+                    <div class="size-qty"><label>S</label><input type="number" min="0" value="0" class="size-qty-input" data-size="S"></div>
+                    <div class="size-qty"><label>M</label><input type="number" min="0" value="0" class="size-qty-input" data-size="M"></div>
+                    <div class="size-qty"><label>L</label><input type="number" min="0" value="0" class="size-qty-input" data-size="L"></div>
+                    <div class="size-qty"><label>XL</label><input type="number" min="0" value="0" class="size-qty-input" data-size="XL"></div>
+                    <div class="size-qty"><label>XXL</label><input type="number" min="0" value="0" class="size-qty-input" data-size="XXL"></div>
+                    <div class="size-qty"><label>3XL</label><input type="number" min="0" value="0" class="size-qty-input" data-size="3XL"></div>
+                  </div>
+                  <div class="pob-subtotal">
+                    <span><span class="fr-text">Total T-Shirts :</span><span class="en-text">Total T-Shirts:</span></span>
+                    <strong><span class="pob-subtotal-val">0</span> units</strong>
+                  </div>
+                  <textarea class="form-control pob-notes pob-spec" placeholder="Logo entreprise souhaité ? Col rond ou col V ?" data-placeholder-fr="Logo entreprise souhaité ? Col rond ou col V ?" data-placeholder-en="Company logo required? Round neck or V-neck?" rows="2"></textarea>
+                </div>
+              </div>
+
+              <!-- Rain Suit -->
+              <div class="product-order-block" id="pob-rainsuit">
+                <div class="pob-header">
+                  <div class="pob-icon"><i class="fas fa-cloud-rain"></i></div>
+                  <span class="pob-title"><span class="fr-text">Tenue de Pluie Complète (Veste + Pantalon)</span><span class="en-text">Complete Rain Suit (Jacket + Trousers)</span></span>
+                  <span class="pob-count"></span>
+                  <i class="fas fa-chevron-down pob-arrow"></i>
+                </div>
+                <div class="pob-body">
+                  <div class="sizes-grid">
+                    <div class="size-qty"><label>S</label><input type="number" min="0" value="0" class="size-qty-input" data-size="S"></div>
+                    <div class="size-qty"><label>M</label><input type="number" min="0" value="0" class="size-qty-input" data-size="M"></div>
+                    <div class="size-qty"><label>L</label><input type="number" min="0" value="0" class="size-qty-input" data-size="L"></div>
+                    <div class="size-qty"><label>XL</label><input type="number" min="0" value="0" class="size-qty-input" data-size="XL"></div>
+                    <div class="size-qty"><label>XXL</label><input type="number" min="0" value="0" class="size-qty-input" data-size="XXL"></div>
+                    <div class="size-qty"><label>3XL</label><input type="number" min="0" value="0" class="size-qty-input" data-size="3XL"></div>
+                  </div>
+                  <div class="pob-subtotal">
+                    <span><span class="fr-text">Total Tenues de Pluie :</span><span class="en-text">Total Rain Suits:</span></span>
+                    <strong><span class="pob-subtotal-val">0</span> units</strong>
+                  </div>
+                  <textarea class="form-control pob-notes pob-spec" placeholder="Bandes réfléchissantes souhaitées ?" data-placeholder-fr="Bandes réfléchissantes souhaitées ?" data-placeholder-en="Reflective strips needed?" rows="2"></textarea>
+                </div>
+              </div>
+
+              <hr class="form-divider">
+
+              <!-- Order Summary -->
+              <div class="order-summary">
+                <h3><i class="fas fa-list-check" style="color:var(--secondary);margin-right:8px;"></i><span class="fr-text">Récapitulatif de Commande</span><span class="en-text">Order Summary</span></h3>
+                <div id="summaryItems">
+                  <p style="opacity:.55;font-size:.85rem"><span class="fr-text">Cliquez sur un produit ci-dessus pour le développer et saisir les quantités.</span><span class="en-text">Click on a product above to expand it and enter quantities.</span></p>
+                </div>
+                <div class="summary-total">
+                  <span><span class="fr-text">Total Unités :</span><span class="en-text">Total Units:</span></span>
+                  <span id="summaryTotal">0</span>
+                </div>
+              </div>
+
+              <!-- Payment -->
+              <div class="form-section-title"><i class="fas fa-money-bill-wave"></i> <span class="fr-text">Mode de Paiement Préféré</span><span class="en-text">Preferred Payment Method</span></div>
+              <div class="pay-options">
+                <label class="pay-radio">
+                  <input type="radio" name="paymentPref" value="Orange Money Guinea">
+                  <span class="pay-radio-icon"><i class="fas fa-mobile-alt" style="color:#FF6600;"></i></span>
+                  <div class="pay-radio-text"><strong>Orange Money</strong><span><span class="fr-text">Monnaie mobile Guinée</span><span class="en-text">Guinea mobile money</span></span></div>
+                </label>
+                <label class="pay-radio">
+                  <input type="radio" name="paymentPref" value="MTN Mobile Money">
+                  <span class="pay-radio-icon"><i class="fas fa-sim-card" style="color:#FFCC00;"></i></span>
+                  <div class="pay-radio-text"><strong>MTN Mobile Money</strong><span><span class="fr-text">Transfert mobile</span><span class="en-text">Mobile transfer</span></span></div>
+                </label>
+                <label class="pay-radio">
+                  <input type="radio" name="paymentPref" value="Bank Transfer">
+                  <span class="pay-radio-icon"><i class="fas fa-university" style="color:var(--primary);"></i></span>
+                  <div class="pay-radio-text"><strong><span class="fr-text">Virement Bancaire</span><span class="en-text">Bank Transfer</span></strong><span>Ecobank / BICIGUI / UBA</span></div>
+                </label>
+                <label class="pay-radio">
+                  <input type="radio" name="paymentPref" value="Western Union / MoneyGram">
+                  <span class="pay-radio-icon"><i class="fas fa-globe-africa" style="color:#007AFF;"></i></span>
+                  <div class="pay-radio-text"><strong>Western Union</strong><span>/ MoneyGram</span></div>
+                </label>
+                <label class="pay-radio">
+                  <input type="radio" name="paymentPref" value="In-Person (Cash at office)">
+                  <span class="pay-radio-icon"><i class="fas fa-hand-holding-usd" style="color:var(--success);"></i></span>
+                  <div class="pay-radio-text"><strong><span class="fr-text">En Personne (Espèces)</span><span class="en-text">In-Person (Cash)</span></strong><span><span class="fr-text">À notre bureau de Conakry</span><span class="en-text">At our Conakry office</span></span></div>
+                </label>
+                <label class="pay-radio">
+                  <input type="radio" name="paymentPref" value="To be discussed">
+                  <span class="pay-radio-icon"><i class="fab fa-whatsapp" style="color:var(--whatsapp);"></i></span>
+                  <div class="pay-radio-text"><strong><span class="fr-text">Via WhatsApp</span><span class="en-text">Discuss via WhatsApp</span></strong><span><span class="fr-text">Nous trouverons une solution</span><span class="en-text">We'll find a solution</span></span></div>
+                </label>
+              </div>
+
+              <hr class="form-divider">
+
+              <div class="form-group">
+                <label for="orderNotes"><span class="fr-text">Notes / Exigences Spéciales</span><span class="en-text">Additional Notes / Special Requirements</span></label>
+                <textarea id="orderNotes" class="form-control" rows="3" placeholder="ex. Logo entreprise sur casques, certifications requises, livraison urgente, etc." data-placeholder-fr="ex. Logo entreprise sur casques, certifications requises, livraison urgente, etc." data-placeholder-en="e.g. Company logo on helmets, specific certifications required, urgent delivery needed, etc."></textarea>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-secondary btn-lg">
+                  <i class="fab fa-whatsapp"></i> <span class="fr-text">Envoyer la Commande via WhatsApp</span><span class="en-text">Send Order via WhatsApp</span>
+                </button>
+                <button type="button" class="btn btn-outline-dark btn-lg" onclick="printQuote()">
+                  <i class="fas fa-print"></i> <span class="fr-text">Imprimer / PDF</span><span class="en-text">Print / Save PDF</span>
+                </button>
+                <button type="button" class="btn btn-email btn-lg" onclick="emailBulkOrder()">
+                  <i class="fas fa-envelope"></i> <span class="fr-text">Envoyer par Email</span><span class="en-text">Send by Email</span>
+                </button>
+              </div>
+              <p class="form-note">
+                <i class="fas fa-info-circle"></i> <span class="fr-text">Vos détails de commande seront envoyés directement à notre WhatsApp. Nous répondrons dans les quelques heures avec un devis. Pour les grandes commandes, nous pouvons aussi envoyer un devis formel par email.</span><span class="en-text">Your order details will be sent directly to our WhatsApp.
+                We'll respond within a few hours with a price quote. For large orders we can also send a formal quotation by email.</span>
+                <a href="order.html#inquiry"><span class="fr-text">Impossible d'envoyer&nbsp;? Utilisez le formulaire de demande.</span><span class="en-text">Can't submit? Send a text inquiry instead.</span></a>
+              </p>
+            </form>
+          </div>
+        </div><!-- /bulk pane -->
+
+        <!-- =================== INDIVIDUAL ORDER =================== -->
+        <div class="order-pane" id="individual">
+          <div class="form-card">
+            <h2 class="form-title"><i class="fas fa-user" style="color:var(--secondary);margin-right:8px;"></i><span class="fr-text">Commande Individuelle</span><span class="en-text">Individual Order</span></h2>
+            <p class="form-subtitle"><span class="fr-text">Pour les achats personnels de 1 à 10 articles. Sélectionnez votre produit, taille et quantité ci-dessous.</span><span class="en-text">For personal purchases of 1–10 items. Select your product, size and quantity below.</span></p>
+
+            <div id="indSuccess" class="success-alert">
+              <i class="fas fa-check-circle"></i>
+                <p class="fr-block">Votre commande a été envoyée via WhatsApp ! Nous confirmerons la disponibilité, les tarifs et organiserons la livraison.</p>
+              <p class="en-block">Your order has been sent via WhatsApp! We'll confirm availability and price and arrange delivery.</p>
+            </div>
+
+            <form onsubmit="submitIndividualOrder(event)">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="indName"><span class="fr-text">Votre Nom Complet</span><span class="en-text">Your Full Name</span> <span class="req">*</span></label>
+                  <input type="text" id="indName" class="form-control" placeholder="Votre nom" data-placeholder-fr="Votre nom" data-placeholder-en="Your name" required>
+                </div>
+                <div class="form-group">
+                  <label for="indPhone"><span class="fr-text">Téléphone / WhatsApp</span><span class="en-text">Phone / WhatsApp</span> <span class="req">*</span></label>
+                  <input type="tel" id="indPhone" class="form-control" placeholder="+224 XXX XXX XXX" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="indProduct"><span class="fr-text">Produit</span><span class="en-text">Product</span> <span class="req">*</span></label>
+                <select id="indProduct" class="form-control" required onchange="updateIndSizes()">
+                  <option value="" data-fr="— Sélectionnez un produit —" data-en="— Select a product —">— Sélectionnez un produit —</option>
+                  <optgroup label="Chaussures de sécurité" data-fr="Chaussures de sécurité" data-en="Safety Footwear">
+                    <option value="Steel Toe Safety Boot (Low)" data-fr="Chaussure sécurité embout acier (basse)" data-en="Steel Toe Safety Boot (Low)">Chaussure sécurité embout acier (basse)</option>
+                    <option value="Steel Toe Safety Boot (High)" data-fr="Chaussure sécurité embout acier (haute)" data-en="Steel Toe Safety Boot (High)">Chaussure sécurité embout acier (haute)</option>
+                    <option value="Composite Toe Safety Boot" data-fr="Chaussure sécurité embout composite" data-en="Composite Toe Safety Boot">Chaussure sécurité embout composite</option>
+                    <option value="Chemical Resistant Gumboot" data-fr="Botte résistante aux produits chimiques" data-en="Chemical Resistant Gumboot">Botte résistante aux produits chimiques</option>
+                  </optgroup>
+                  <optgroup label="Gants de protection" data-fr="Gants de protection" data-en="Protective Gloves">
+                    <option value="Cut-Resistant Gloves (Level A4)" data-fr="Gants anti-coupure (Niveau A4)" data-en="Cut-Resistant Gloves (Level A4)">Gants anti-coupure (Niveau A4)</option>
+                    <option value="Heat-Resistant Gloves" data-fr="Gants résistants à la chaleur" data-en="Heat-Resistant Gloves">Gants résistants à la chaleur</option>
+                    <option value="Chemical-Resistant Nitrile Gloves" data-fr="Gants nitrile résistants aux produits chimiques" data-en="Chemical-Resistant Nitrile Gloves">Gants nitrile résistants aux produits chimiques</option>
+                    <option value="Impact-Resistant Mechanic Gloves" data-fr="Gants mécanicien anti-impact" data-en="Impact-Resistant Mechanic Gloves">Gants mécanicien anti-impact</option>
+                  </optgroup>
+                  <optgroup label="Protection de la tête" data-fr="Protection de la tête" data-en="Head Protection">
+                    <option value="Safety Helmet / Hard Hat" data-fr="Casque de sécurité" data-en="Safety Helmet / Hard Hat">Casque de sécurité</option>
+                    <option value="Hard Hat with Face Visor" data-fr="Casque avec visière" data-en="Hard Hat with Face Visor">Casque avec visière</option>
+                  </optgroup>
+                  <optgroup label="Eye & Face Protection">
+                    <option value="Anti-Fog Safety Goggles" data-fr="Lunettes de protection anti-buée" data-en="Anti-Fog Safety Goggles">Lunettes de protection anti-buée</option>
+                    <option value="Wraparound Safety Glasses" data-fr="Lunettes de sécurité panoramiques" data-en="Wraparound Safety Glasses">Lunettes de sécurité panoramiques</option>
+                    <option value="Face Shield" data-fr="Écran facial" data-en="Face Shield">Écran facial</option>
+                  </optgroup>
+                  <optgroup label="Protection respiratoire" data-fr="Protection respiratoire" data-en="Respiratory">
+                    <option value="Disposable FFP2/N95 Mask" data-fr="Masque jetable FFP2/N95" data-en="Disposable FFP2/N95 Mask">Masque jetable FFP2/N95</option>
+                    <option value="Half-Face Reusable Respirator" data-fr="Demi-masque réutilisable" data-en="Half-Face Reusable Respirator">Demi-masque réutilisable</option>
+                    <option value="Full-Face Respirator" data-fr="Masque facial complet" data-en="Full-Face Respirator">Masque facial complet</option>
+                  </optgroup>
+                  <optgroup label="Protection auditive" data-fr="Protection auditive" data-en="Hearing Protection">
+                    <option value="Foam Ear Plugs (box of 20 pairs)" data-fr="Bouchons d'oreilles en mousse (boîte de 20 paires)" data-en="Foam Ear Plugs (box of 20 pairs)">Bouchons d'oreilles en mousse (boîte de 20 paires)</option>
+                    <option value="Industrial Ear Muffs" data-fr="Casques antibruit industriels" data-en="Industrial Ear Muffs">Casques antibruit industriels</option>
+                  </optgroup>
+                  <optgroup label="Vêtements de travail" data-fr="Vêtements de travail" data-en="Workwear">
+                    <option value="Hi-Vis Safety Vest" data-fr="Gilet de sécurité haute visibilité" data-en="Hi-Vis Safety Vest">Gilet de sécurité haute visibilité</option>
+                    <option value="Hi-Vis Safety Jacket" data-fr="Veste haute visibilité" data-en="Hi-Vis Safety Jacket">Veste haute visibilité</option>
+                    <option value="Cargo Trousers" data-fr="Pantalon cargo" data-en="Cargo Trousers">Pantalon cargo</option>
+                    <option value="Coverall / Boiler Suit" data-fr="Combinaison / Bleu de travail" data-en="Coverall / Boiler Suit">Combinaison / Bleu de travail</option>
+                    <option value="FR Coverall (Flame-Resistant)" data-fr="Combinaison FR (résistante aux flammes)" data-en="FR Coverall (Flame-Resistant)">Combinaison FR (résistante aux flammes)</option>
+                  </optgroup>
+                  <optgroup label="Autres" data-fr="Autres" data-en="Other">
+                    <option value="Full-Body Safety Harness" data-fr="Harnais de sécurité complet" data-en="Full-Body Safety Harness">Harnais de sécurité complet</option>
+                    <option value="First Aid Kit" data-fr="Trousse de premiers secours" data-en="First Aid Kit">Trousse de premiers secours</option>
+                  </optgroup>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="indSize"><span class="fr-text">Taille / Couleur / Variante</span><span class="en-text">Size / Colour / Variant</span></label>
+                  <input type="text" id="indSize" class="form-control" placeholder="ex. EU 43, ou L, ou Jaune" data-placeholder-fr="ex. EU 43, ou L, ou Jaune" data-placeholder-en="e.g. EU 43, or L, or Yellow">
+                </div>
+                <div class="form-group">
+                  <label for="indQty"><span class="fr-text">Quantité</span><span class="en-text">Quantity</span></label>
+                  <input type="number" id="indQty" class="form-control" min="1" max="50" value="1" placeholder="1">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="indPayment"><span class="fr-text">Paiement Préféré</span><span class="en-text">Preferred Payment</span></label>
+                <select id="indPayment" class="form-control">
+                  <option value="" data-fr="— Mode de paiement —" data-en="— Select payment method —">— Mode de paiement —</option>
+                  <option value="Orange Money Guinea" data-fr="Orange Money Guinée" data-en="Orange Money Guinea">Orange Money Guinée</option>
+                  <option value="MTN Mobile Money" data-fr="MTN Mobile Money" data-en="MTN Mobile Money">MTN Mobile Money</option>
+                  <option value="Bank Transfer" data-fr="Virement bancaire" data-en="Bank Transfer">Virement bancaire</option>
+                  <option value="Western Union / MoneyGram" data-fr="Western Union / MoneyGram" data-en="Western Union / MoneyGram">Western Union / MoneyGram</option>
+                  <option value="In-Person Cash (Conakry office)" data-fr="Paiement en espèces (bureau de Conakry)" data-en="In-Person Cash (Conakry office)">Paiement en espèces (bureau de Conakry)</option>
+                  <option value="To be discussed" data-fr="À discuter" data-en="To be discussed">À discuter</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="indNotes"><span class="fr-text">Notes (facultatif)</span><span class="en-text">Notes (optional)</span></label>
+                <textarea id="indNotes" class="form-control" rows="3" placeholder="Exigences particulières, adresse de livraison à Conakry, ou questions" data-placeholder-fr="Exigences particulières, adresse de livraison à Conakry, ou questions" data-placeholder-en="Any specific requirements, delivery address in Conakry, or questions"></textarea>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-secondary btn-lg">
+                  <i class="fab fa-whatsapp"></i> <span class="fr-text">Envoyer la Commande via WhatsApp</span><span class="en-text">Send Order via WhatsApp</span>
+                </button>
+              </div>
+              <p class="form-note">
+                <p class="form-note" style="margin-top:14px;">
+                <i class="fas fa-info-circle"></i>
+                <span class="fr-text">Nous livrons partout en Guinée.</span>
+                <span class="en-text">We deliver anywhere in Guinea.</span>
+              </p>
+              </p>
+            </form>
+          </div>
+        </div><!-- /individual pane -->
+
+        <!-- =================== INQUIRY =================== -->
+        <div class="order-pane" id="inquiry">
+          <div class="form-card">
+            <h2 class="form-title"><i class="fas fa-envelope" style="color:var(--secondary);margin-right:8px;"></i><span class="fr-text">Envoyer une Demande</span><span class="en-text">Send an Inquiry</span></h2>
+            <p class="form-subtitle"><span class="fr-text">Pas sûr de ce dont vous avez besoin, ou préférez discuter avant de commander ? Envoyez-nous un message et nous vous répondrons.</span><span class="en-text">Not sure what you need, or prefer to discuss before committing? Send us a message and we'll get back to you.</span></p>
+
+            <div id="inqSuccess" class="success-alert">
+              <i class="fas fa-check-circle"></i>
+              <p><span class="fr-text">Votre demande a été envoyée via WhatsApp ! Notre équipe vous répondra dès que possible.</span><span class="en-text">Your inquiry has been sent via WhatsApp! Our team will respond as soon as possible.</span></p>
+            </div>
+
+            <form onsubmit="submitInquiry(event)">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="inqName"><span class="fr-text">Votre Nom</span><span class="en-text">Your Name</span> <span class="req">*</span></label>
+                  <input type="text" id="inqName" class="form-control" placeholder="Nom complet" data-placeholder-fr="Nom complet" data-placeholder-en="Full name" required>
+                </div>
+                <div class="form-group">
+                  <label for="inqCompany"><span class="fr-text">Entreprise (si applicable)</span><span class="en-text">Company (if applicable)</span></label>
+                  <input type="text" id="inqCompany" class="form-control" placeholder="Nom de l'entreprise" data-placeholder-fr="Nom de l'entreprise" data-placeholder-en="Company name">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="inqPhone"><span class="fr-text">Téléphone / WhatsApp</span><span class="en-text">Phone / WhatsApp</span> <span class="req">*</span></label>
+                  <input type="tel" id="inqPhone" class="form-control" placeholder="+224 XXX XXX XXX" required>
+                </div>
+                <div class="form-group">
+                  <label for="inqEmail"><span class="fr-text">Email (facultatif)</span><span class="en-text">Email (optional)</span></label>
+                  <input type="email" id="inqEmail" class="form-control" placeholder="your@email.com">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inqMessage"><span class="fr-text">Votre Message / Besoins</span><span class="en-text">Your Message / Requirements</span> <span class="req">*</span></label>
+                <textarea id="inqMessage" class="form-control" rows="5" placeholder="Décrivez les ÉPI dont vous avez besoin, les quantités approximatives, tailles, exigences spéciales, lieu de livraison, questions sur le paiement, etc." data-placeholder-fr="Décrivez les ÉPI dont vous avez besoin, les quantités approximatives, tailles, exigences spéciales, lieu de livraison, questions sur le paiement, etc." data-placeholder-en="Describe what PPE products you need, approximate quantities, sizes, any special requirements, delivery location, questions about payment, or anything else." required></textarea>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn btn-secondary btn-lg">
+                  <i class="fab fa-whatsapp"></i> <span class="fr-text">Envoyer la Demande via WhatsApp</span><span class="en-text">Send Inquiry via WhatsApp</span>
+                </button>
+                <a href="mailto:alpharmagroup1@gmail.com?subject=PPE%20Inquiry%20from%20Website" class="btn btn-outline-dark btn-lg">
+                  <i class="fas fa-envelope"></i> <span class="fr-text">Envoyer par Email</span><span class="en-text">Send by Email</span>
+                </a>
+              </div>
+              <p class="form-note">
+                <i class="fas fa-info-circle"></i> <span class="fr-text">Nous répondons à toutes les demandes — généralement dans les quelques heures les jours ouvrables.
+                Pour les besoins urgents, utilisez le bouton WhatsApp ci-dessus ou appelez-nous : <strong>+224 611 40 80 54</strong> / <strong>+224 610 74 76 00</strong>.</span><span class="en-text">We respond to all inquiries — usually within a few hours on business days.
+                For urgent needs, use the WhatsApp button above or call us: <strong>+224 611 40 80 54</strong> / <strong>+224 610 74 76 00</strong>.</span>
+              </p>
+            </form>
+          </div>
+        </div><!-- /inquiry pane -->
+
+      </div><!-- /order-container -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" fill="none" aria-hidden="true"><polygon points="22,2 42,18 22,42 2,18" fill="#f4a620"/><polygon points="22,2 42,18 22,22" fill="#1a2744" opacity=".18"/><polygon points="22,2 2,18 22,22" fill="#fff" opacity=".12"/><polygon points="22,10 34,20 22,34 10,20" fill="#1a2744" opacity=".4"/><circle cx="22" cy="20" r="2.5" fill="#fff" opacity=".65"/></svg></span>
+            <div class="logo-text"><span class="logo-name">ALPHARMA</span><span class="logo-sub">GROUP</span></div>
+          </a>
+          <p style="margin-top:16px;">
+            <span class="fr-text">Votre partenaire ÉPI de confiance pour les secteurs miniers, BTP et industriels en Guinée et Afrique de l'Ouest.</span>
+            <span class="en-text">Your trusted PPE partner for mining, construction and industrial sectors in Guinea and West Africa.</span>
+          </p>
+          <div class="footer-social">
+            <a href="https://wa.me/+33627291646" class="social-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="mailto:alpharmagroup1@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4><span class="fr-text">Produits</span><span class="en-text">Products</span></h4>
+          <ul class="footer-links">
+            <li><a href="products.html?cat=boots"><i class="fas fa-chevron-right"></i> <span class="fr-text">Chaussures de Sécurité</span><span class="en-text">Safety Footwear</span></a></li>
+            <li><a href="products.html?cat=gloves"><i class="fas fa-chevron-right"></i> <span class="fr-text">Gants</span><span class="en-text">Gloves</span></a></li>
+            <li><a href="products.html?cat=helmets"><i class="fas fa-chevron-right"></i> <span class="fr-text">Casques</span><span class="en-text">Helmets</span></a></li>
+            <li><a href="products.html?cat=body"><i class="fas fa-chevron-right"></i> <span class="fr-text">Haute Visibilité</span><span class="en-text">Hi-Vis Workwear</span></a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4><span class="fr-text">Liens Rapides</span><span class="en-text">Quick Links</span></h4>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fas fa-chevron-right"></i> <span class="fr-text">Accueil</span><span class="en-text">Home</span></a></li>
+            <li><a href="products.html"><i class="fas fa-chevron-right"></i> <span class="fr-text">Tous les Produits</span><span class="en-text">All Products</span></a></li>
+            <li><a href="contact.html"><i class="fas fa-chevron-right"></i> <span class="fr-text">Contact &amp; Adresses</span><span class="en-text">Contact &amp; Locations</span></a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4><span class="fr-text">Contact</span><span class="en-text">Contact</span></h4>
+          <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span><span class="fr-text">Marché Sangoyah</span><span class="en-text">Sangoyah Market</span><br>Conakry, Guinée</span></div>
+          <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>14 Rue des Carrieres<br>95360 Montmagny</span></div>
+          <div class="footer-contact-item"><i class="fab fa-whatsapp"></i><span>+33 6 27 29 16 46</span></div>
+          <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>alpharmagroup1@gmail.com</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Alpharma Group. <span class="fr-text">Tous droits réservés.</span><span class="en-text">All rights reserved.</span> Conakry, Guinée · Paris, France</p>
+        <div class="footer-certs">
+          <span class="cert-badge">ISO 9001</span><span class="cert-badge">CE Marked</span>
+        </div>
+        <p class="footer-credit">Designed &amp; developed by DS</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <div class="float-wa">
+    <div class="float-wa-tip"><span class="fr-text">Discutez avec nous</span><span class="en-text">Chat with us</span></div>
+    <a href="https://wa.me/+33627291646?text=Bonjour%20Alpharma%20Group%2C%20je%20souhaite%20passer%20une%20commande." class="float-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
