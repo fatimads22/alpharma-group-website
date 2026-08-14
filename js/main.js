@@ -173,13 +173,15 @@ function updateBlockSubtotal(block) {
   const el = block.querySelector('.pob-subtotal-val');
   if (el) el.textContent = total.toLocaleString();
   const countEl = block.querySelector('.pob-count');
-  if (countEl) countEl.textContent = total > 0 ? `${total.toLocaleString()} units` : '';
+  if (countEl) countEl.textContent = total > 0 ? `${total.toLocaleString()} ${isEnglishLanguage() ? 'units' : 'unités'}` : '';
 }
 
 function updateSummary() {
   const summaryItems = document.getElementById('summaryItems');
   const summaryTotal = document.getElementById('summaryTotal');
   if (!summaryItems || !summaryTotal) return;
+  const isLangEn = isEnglishLanguage();
+  const unitLabel = isLangEn ? 'units' : 'unités';
 
   let grandTotal = 0;
   let rows = '';
@@ -187,17 +189,19 @@ function updateSummary() {
   document.querySelectorAll('.product-order-block').forEach(block => {
     const header = block.querySelector('.pob-header');
     if (!header.classList.contains('open')) return;
-    const name = block.querySelector('.pob-title').textContent.trim();
+    const titleEl = block.querySelector('.pob-title');
+    const localizedTitle = titleEl.querySelector(isEnglishLanguage() ? '.en-text' : '.fr-text');
+    const name = (localizedTitle || titleEl).textContent.trim();
     const inputs = block.querySelectorAll('.size-qty input');
     let blockTotal = 0;
     inputs.forEach(inp => { blockTotal += parseInt(inp.value) || 0; });
     if (blockTotal > 0) {
       grandTotal += blockTotal;
-      rows += `<div class="summary-row"><span>${name}</span><span>${blockTotal.toLocaleString()} units</span></div>`;
+      rows += `<div class="summary-row"><span>${name}</span><span>${blockTotal.toLocaleString()} ${unitLabel}</span></div>`;
     }
   });
 
-  summaryItems.innerHTML = rows || '<p style="opacity:.55;font-size:.85rem">No products selected yet — check products above.</p>';
+  summaryItems.innerHTML = rows || `<p style="opacity:.55;font-size:.85rem">${isLangEn ? 'No products selected yet — check products above.' : 'Aucun produit sélectionné pour le moment — vérifiez les produits ci-dessus.'}</p>`;
   summaryTotal.textContent = grandTotal.toLocaleString();
 }
 
@@ -577,21 +581,26 @@ function printQuote() {
   var phone   = val('orderPhone')  || '&mdash;';
   var email   = val('orderEmail')  || '&mdash;';
   var country = val('orderCountry')|| '&mdash;';
-  var pay     = checkedRadio('paymentPref') || (isEn ? 'To be discussed' : '&#192; discuter');
+  var pay     = localizedPaymentValue(checkedRadio('paymentPref')) || (isEn ? 'To be discussed' : '&#192; discuter');
   var notes   = val('orderNotes');
   var date    = new Date().toLocaleDateString(isEn ? 'en-GB' : 'fr-FR', {day:'2-digit', month:'long', year:'numeric'});
 
   var rows = ''; var grandTotal = 0;
   document.querySelectorAll('.product-order-block').forEach(function(block) {
     if (!block.querySelector('.pob-header').classList.contains('open')) return;
-    var name   = block.querySelector('.pob-title').textContent.trim();
+    var titleEl = block.querySelector('.pob-title');
+    var localizedTitle = titleEl.querySelector(isEn ? '.en-text' : '.fr-text');
+    var name   = (localizedTitle || titleEl).textContent.trim();
     var inputs = block.querySelectorAll('.size-qty input');
     var lines  = [];
     inputs.forEach(function(inp) {
       var qty = parseInt(inp.value) || 0;
       if (qty > 0) {
         grandTotal += qty;
-        lines.push('<tr><td class="td-s">' + (inp.dataset.size || '?') + '</td><td class="td-q">' + qty.toLocaleString() + '</td></tr>');
+        var label = inp.closest('.size-qty').querySelector('label');
+        var localizedLabel = label.querySelector(isEn ? '.en-text' : '.fr-text');
+        var itemName = localizedLabel ? localizedLabel.textContent.trim() : (inp.dataset.size || '?');
+        lines.push('<tr><td class="td-s">' + itemName + '</td><td class="td-q">' + qty.toLocaleString() + '</td></tr>');
       }
     });
     if (lines.length) {
@@ -649,12 +658,15 @@ function printQuote() {
     + '.empty{opacity:.5;font-size:12px;margin-top:6px}'
     + '.footer{margin-top:28px;border-top:1px solid #ddd;padding-top:10px;font-size:10px;color:#888;text-align:center;line-height:1.8}'
     + '@page{margin:1.5cm}'
+    + '.print-actions{margin:0 0 12px;text-align:right}.print-button{background:#1a2744;color:#fff;border:0;border-radius:999px;padding:10px 18px;font-size:12px;font-weight:700;cursor:pointer}.print-help{margin:6px 0 0;text-align:right;font-size:11px;color:#666}'
     + '.logo-svg{width:40px;height:40px;flex-shrink:0}'
+    + '@media print{.print-actions{display:none}}'
     + '</style></head><body>'
     + '<div class="hdr"><div style="display:flex;align-items:center;gap:12px">'
     + '<svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" fill="none"><polygon points="22,2 42,18 22,42 2,18" fill="#f4a620"/><polygon points="22,2 42,18 22,22" fill="#1a2744" opacity=".18"/><polygon points="22,2 2,18 22,22" fill="#fff" opacity=".12"/><polygon points="22,10 34,20 22,34 10,20" fill="#1a2744" opacity=".4"/><circle cx="22" cy="20" r="2.5" fill="#fff" opacity=".65"/></svg>'
     + '<div><div class="brand">Alpha<span>rma</span> Group</div><div class="sub">' + lbl.sub + '</div></div></div>'
     + '<div class="meta"><strong>' + lbl.title + '</strong><br>' + date + '<br>alpharmagroup1@gmail.com<br>+33 6 27 29 16 46</div></div>'
+    + '<div class="print-actions"><button class="print-button" type="button" onclick="window.print()">' + (isEn ? 'Print / Save PDF' : 'Imprimer / Enregistrer en PDF') + '</button><p class="print-help">' + (isEn ? 'Choose a printer or Save as PDF.' : 'Choisissez une imprimante ou Enregistrer en PDF.') + '</p></div>'
     + '<h2>' + lbl.ci + '</h2>'
     + '<table>'
     + '<tr><td class="il">' + lbl.co + '</td><td class="iv">' + company + '</td></tr>'
@@ -670,9 +682,8 @@ function printQuote() {
     + '<div class="footer">Alpharma Group &mdash; March&#233; Sangoyah, Conakry, R&#233;publique de Guin&#233;e<br>'
     + 'Correspondant commercial : 14 Rue des Carrieres, 95360 Montmagny, France<br>'
     + 'alpharmagroup1@gmail.com &middot; +33 6 27 29 16 46 &middot; +224 611 40 80 54</div>'
-    + '<scr' + 'ipt>window.onload=function(){window.focus();window.print();window.onafterprint=function(){window.close();};}</scr' + 'ipt>'
     + '</body></html>';
 
   var w = window.open('', '_blank');
-  if (w) { w.document.write(html); w.document.close(); w.focus(); }
+  if (w) { w.document.write(html); w.document.close(); }
 }
