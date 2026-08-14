@@ -296,6 +296,7 @@ ul    { list-style: none; }
 .order-type-card {
   background: var(--light); border: 2px solid var(--light-gray);
   border-radius: var(--r-md); padding: 30px 22px; text-align: center; transition: var(--t);
+  display: flex; flex-direction: column;
 }
 .order-type-card:hover { border-color: var(--secondary); box-shadow: var(--shadow-md); }
 .order-type-card h3 {
@@ -303,7 +304,8 @@ ul    { list-style: none; }
   margin-bottom: 12px; display: flex; align-items: center; justify-content: center; gap: 8px;
 }
 .order-type-card h3 i { color: var(--secondary); }
-.order-type-card p   { color: var(--gray); font-size: .88rem; margin-bottom: 20px; line-height: 1.6; }
+.order-type-card p   { color: var(--gray); font-size: .88rem; margin-bottom: 20px; line-height: 1.6; flex: 1; }
+.order-type-card > .btn { align-self: center; }
 
 /* =====================
    PAYMENT
@@ -846,12 +848,13 @@ html.lang-en .en-block { display: block !important; }
    DUAL OFFICE CARDS
    ===================== */
 .dual-office    { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 30px; }
-.office-card    { background: var(--white); border: 2px solid var(--light-gray); border-radius: var(--r-md); padding: 22px; }
+.office-card    { background: var(--white); border: 2px solid var(--light-gray); border-radius: var(--r-md); padding: 22px; display: flex; flex-direction: column; }
 .office-card.highlight { border-color: var(--secondary); }
 .office-flag    { font-size: 1.6rem; margin-bottom: 10px; }
 .office-card h4 { color: var(--primary); font-size: .97rem; font-weight: 700; margin-bottom: 8px; }
 .office-detail  { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 7px; font-size: .84rem; color: var(--gray); line-height: 1.4; }
 .office-detail i { color: var(--secondary); margin-top: 2px; flex-shrink: 0; width: 14px; }
+.office-card > .btn { align-self: flex-start; }
 
 /* =====================
    RESPONSIVE ADDITIONS
