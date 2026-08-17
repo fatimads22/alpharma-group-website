@@ -275,7 +275,6 @@ function submitBulkOrder(e) {
   if (!validateBulkForm()) return;
   const msg = buildBulkWhatsAppMessage();
   openWhatsApp(msg);
-  showSuccess('bulkSuccess');
 }
 
 function emailBulkOrder() {
@@ -400,7 +399,6 @@ function submitIndividualOrder(e) {
   msg += `\n_${text.sent}_`;
 
   openWhatsApp(msg);
-  showSuccess('indSuccess');
 }
 
 /* =====================
@@ -432,7 +430,6 @@ function submitInquiry(e) {
   msg += `\n_${text.sent}_`;
 
   openWhatsApp(msg);
-  showSuccess('inqSuccess');
 }
 
 function emailInquiry() {
@@ -485,7 +482,6 @@ function submitContactForm(e) {
   msg += `\n*${text.message}:*\n${message}`;
 
   openWhatsApp(msg);
-  showSuccess('ctSuccess');
 }
 
 /* =====================
@@ -680,7 +676,7 @@ function printQuote() {
     + orderTable
     + (notes ? '<h2>' + lbl.sr + '</h2><div class="notes">' + notes + '</div>' : '')
     + '<div class="footer">Alpharma Group &mdash; March&#233; Sangoyah, Conakry, R&#233;publique de Guin&#233;e<br>'
-    + 'Correspondant commercial : 14 Rue des Carrieres, 95360 Montmagny, France<br>'
+    + 'Correspondant commercial : 95360 Montmagny, France<br>'
     + 'alpharmagroup1@gmail.com &middot; +33 6 27 29 16 46 &middot; +224 611 40 80 54</div>'
     + '</body></html>';
 
